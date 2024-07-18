@@ -1,0 +1,14 @@
+chicago_taxi_analysis:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: valued-lambda-429806-a1
+      dataset: dbt_chicago_taxi_analysis
+      threads: 4
+      keyfile: C:\Users\pavel\Taxi_project\valued-lambda-429806-a1-1dd730ceb6bd.json
+      timeout_seconds: 300
+      location: europe-west3
+      priority: interactive
+      retries: 1

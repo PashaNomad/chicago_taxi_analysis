@@ -1,0 +1,8 @@
+name: 'chicago_taxi_analysis'
+version: '1.0'
+profile: 'chicago_taxi_analysis'
+source-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
