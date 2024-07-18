@@ -1,8 +1,17 @@
 
+  
+    
 
-  create or replace view `valued-lambda-429806-a1`.`dbt_paliferchuk`.`tips_with_change`
-  OPTIONS()
-  as with top_taxis as (
+    create or replace table `valued-lambda-429806-a1`.`dbt_paliferchuk`.`tips_with_change`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+with top_taxis as (
   select
     taxi_id
   from `valued-lambda-429806-a1`.`dbt_paliferchuk`.`april_tips`
@@ -28,5 +37,8 @@ select
   year_month,
   tips_sum,
   tips_change
-from tips_with_change;
+from tips_with_change
 
+
+    );
+  

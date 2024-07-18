@@ -1,3 +1,8 @@
+{{ config(
+  materialized='incremental',
+  unique_key='taxi_id, year_month'
+) }}
+
 with top_taxis as (
   select
     taxi_id
@@ -25,3 +30,7 @@ select
   tips_sum,
   tips_change
 from tips_with_change
+
+{% if is_incremental() %}
+  where year_month > (select max(year_month) from {{ this }})
+{% endif %}

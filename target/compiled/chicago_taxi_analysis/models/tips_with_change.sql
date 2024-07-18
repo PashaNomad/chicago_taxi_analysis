@@ -1,3 +1,5 @@
+
+
 with top_taxis as (
   select
     taxi_id
@@ -25,3 +27,4 @@ select
   tips_sum,
   tips_change
 from tips_with_change
+

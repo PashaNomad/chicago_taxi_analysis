@@ -1,0 +1,45 @@
+version: 1
+
+models:
+  - name: stg_taxi_trips
+    description: "Выбирает данные для дальнейшего анализа"
+    columns:
+      - name: unique_key
+        description: "Уникальный идентификатор поездки"
+      - name: taxi_id
+        description: "Идентификатор такси"
+      - name: trip_start_timestamp
+        description: "Дата и время начала поездки"
+      - name: year
+        description: "Год поездки"
+      - name: month
+        description: "Месяц поездки"
+      - name: tips
+        description: "Сумма чаевых за поездку"
+  - name: monthly_tips
+    description: "Суммирует саевые по месяцам для каждой машины"
+    columns:
+      - name: taxi_id
+        description: "Идентификатор такси"
+      - name: year_month
+        description: "Год и месяц поездки"
+      - name: tips_sum
+        description: "Сумма чаевых за месяц"
+  - name: april_tips
+    description: "Выбирает три машины, получившие наибольшее количество чаевых в апреле 2018 года"
+    columns:
+      - name: taxi_id
+        description: "Идентификатор такси"
+      - name: tips_sum
+        description: "Сумма чаевых за месяц"
+  - name: tips_with_change
+    description: "Отражает изменения чаевых в процентах в последующие месяцы"
+    columns:
+      - name: taxi_id
+        description: "Идентификатор такси"
+      - name: year_month
+        description: "Год и месяц поездки"
+      - name: tips_sum
+        description: "Сумма чаевых за месяц"
+      - name: tips_change
+        description: "Изменение суммы чаевых в процентах"
